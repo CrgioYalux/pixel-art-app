@@ -1,0 +1,24 @@
+.board-frame {
+  min-width: 80vw;
+  min-height: 80vw;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.board-row {
+  flex: 1 1 auto;
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.board-cell {
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.not-visible {
+  visibility: hidden;
+}
