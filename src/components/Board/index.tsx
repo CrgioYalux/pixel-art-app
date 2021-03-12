@@ -1,4 +1,3 @@
-import { formatWithOptions } from 'node:util';
 import React, { useState } from 'react';
 import { getArray } from '../../helpers/getArray';
 import './Board.css';
