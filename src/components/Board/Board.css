@@ -1,9 +1,9 @@
 .board-frame {
-  min-width: 80vw;
-  min-height: 80vw;
+  min-width: 90vw;
+  min-height: 90vw;
   display: flex;
   flex-flow: column nowrap;
-  outline: 1px solid black;
+  outline: 2px solid black;
 }
 
 .board-row {

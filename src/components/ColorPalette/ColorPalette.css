@@ -1,19 +1,24 @@
 .palette-frame {
+  min-height: 10vh;
+  max-width: 95vw;
   position: relative;
-
-  min-height: 20vh;
-  min-width: 20vh;
-  max-width: 90vw;
-
   display: flex;
   flex-flow: row wrap;
   align-items: center;
   justify-content: center;
+  gap: 2px;
 }
 
 .color-opt {
-  flex-basis: auto;
   width: 2rem;
   height: 2rem;
   cursor: pointer;
+}
+
+.selected {
+  position: relative;
+  display: grid;
+  place-items: center;
+  transform: scale(1.2);
+  outline: 2px dotted black;
 }

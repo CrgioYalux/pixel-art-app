@@ -17,7 +17,7 @@ const App:React.FC = () => {
       <Board level={20} pincelColor={pincelColor} options={options}/>
       <ColorPalette changePincelColor={setPincelColor}/>
       <div className="options">
-        <button className="button" onClick={() => setOptions((current:options):options => { return {blankSpaceVisibility:!current.blankSpaceVisibility, bordersVisibility:current.bordersVisibility}})}>toggle blank spaces visibility</button>
+        <button className="button" onClick={() => setOptions((current:options):options => { return {blankSpaceVisibility:!current.blankSpaceVisibility, bordersVisibility:current.bordersVisibility}})}>toggle blank spaces existence</button>
         <button className="button" onClick={() => setOptions((current:options):options => { return {blankSpaceVisibility:current.blankSpaceVisibility, bordersVisibility:!current.bordersVisibility}})}>toggle borders visibility</button>
         <button className="button" onClick={() => screenshotElement('board-frame')}>download draw</button>
       </div>

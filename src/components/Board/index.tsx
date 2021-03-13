@@ -37,7 +37,7 @@ const Board : React.FC<Props> = ({ level, pincelColor, options }) => {
   }
 
   const styleForBordersAndColor = (color:string): object => {
-    if (options.bordersVisibility) return { backgroundColor: `#${color}`, outline: '1px solid black'};
+    if (options.bordersVisibility) return { backgroundColor: `#${color}`, outline: '1px solid rgba(0,0,0,0.1)'};
     else return { backgroundColor: `#${color}`, outline: `none` };
   }
 
