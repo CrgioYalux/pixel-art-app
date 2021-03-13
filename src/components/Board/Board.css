@@ -23,3 +23,10 @@
 .not-visible {
   visibility: hidden;
 }
+
+@media screen and (min-width: 700px) {
+  .board-frame {
+    min-width: 90vh;
+    min-height: 90vh;
+  }
+}

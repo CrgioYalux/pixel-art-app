@@ -1,0 +1,48 @@
+.button {
+  outline: 0;
+  background-color: black;
+  color: white;
+  padding: 0.3rem 0.6rem;
+  border: 1px solid white;
+  border-radius: 9999px;
+  cursor: pointer;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.menu {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.options {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  outline: 1px solid black;
+}
+
+.toggled {
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+}
+
+#openMenu:checked ~ .options {
+}
+
+#openMenu {
+}
+
+.menuBT {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: rgb(199, 149, 133);
+  cursor: pointer;
+}
