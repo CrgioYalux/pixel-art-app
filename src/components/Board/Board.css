@@ -3,6 +3,7 @@
   min-height: 80vw;
   display: flex;
   flex-flow: column nowrap;
+  outline: 1px solid black;
 }
 
 .board-row {

@@ -2,8 +2,26 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   min-height: 100vh;
-  gap: 0.4rem;
   padding: 0.4rem;
+}
+
+.button {
+  border: 0;
+  outline: 0;
+  background-color: black;
+  color: white;
+  padding: 0.2rem 0.4rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.options {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
 }

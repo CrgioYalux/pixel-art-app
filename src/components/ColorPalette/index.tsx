@@ -39,11 +39,7 @@ const ColorPalette : React.FC<Props> = ({ changePincelColor }) => {
     <div className="palette-frame">
       {!colors 
       ? <Spinner />
-      : colors.map((color:string, idx:number) =>
-        <>
-          <div onClick={() => changePincelColor(color)} className={['color-opt', `color-${color}`].join(' ')} style={{backgroundColor: `#${color}`}}  key={idx}></div>
-        </>
-      )
+      : colors.map((color:string, idx:number) => <div onClick={() => changePincelColor(color)} className={['color-opt', `color-${color}`].join(' ')} style={{backgroundColor: `#${color}`}}  key={idx}></div>)
       }
     </div>
     </>
