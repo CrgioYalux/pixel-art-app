@@ -1,6 +1,8 @@
 import React from 'react';
 import { screenshotElement } from '../../helpers/screenshot';
+import OpenMenuBT from './OpenMenuBT';
 import './Menu.css';
+import { clearArray } from '../../helpers/getArray';
 
 interface options {
   blankSpaceVisibility: boolean;
@@ -18,13 +20,8 @@ const Menu : React.FC<Props> = ({ options, setOptions }) => {
   }
 
   return (
-    <div className="menu">
-      <label htmlFor='openMenu'>
-        <div className="menuBT">
-          <div className="menuBT-inside"></div>
-        </div>
-      </label>
-      <input type='checkbox' id='openMenu'/>
+    <>
+      <OpenMenuBT />
       <div className='options'>
         <button 
           className={['button', !options.blankSpaceVisibility ? 'toggled' : null].join(' ')} 
@@ -47,7 +44,7 @@ const Menu : React.FC<Props> = ({ options, setOptions }) => {
             download art
         </button>
       </div>
-  </div>
+  </>
   );
 };
 

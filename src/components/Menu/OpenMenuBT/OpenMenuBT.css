@@ -1,0 +1,58 @@
+.menuBT {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+
+  width: 3rem;
+  height: 3rem;
+
+  border-radius: 50%;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid black;
+  cursor: pointer;
+
+  z-index: 100;
+
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+}
+
+#openMenu,
+#menuBT-animation {
+  display: none;
+}
+
+.menuBT-inside {
+  width: 60%;
+  height: 15%;
+  border-radius: 9999px;
+}
+
+#openMenu:checked ~ div {
+  height: 0px;
+}
+
+#openMenu:checked ~ label > .menuBT > .menuBT-inside {
+  position: relative;
+  background-color: white;
+  margin: 1px 0;
+  transition: margin 0.3s, background-color 0.6s;
+}
+
+#openMenu:not(:checked) ~ label > .menuBT > .menuBT-inside {
+  position: absolute;
+  background-color: black;
+  transition: background-color 0.6s;
+}
+
+#openMenu:checked ~ label > .menuBT {
+  background-color: black;
+  transition: background-color 0.6s;
+}
+
+#openMenu:not(:checked) ~ label > .menuBT {
+  background-color: white;
+  transition: background-color 0.6s;
+}
