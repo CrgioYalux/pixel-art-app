@@ -2,8 +2,13 @@ const range = (size:number):string[] => {
   return Array.from(Array(size).keys()).map((i) => String(i));
 }
 
-export const clearArray = (array:Array<string>):Array<string> => {
-  return array.map((value:string) => value = 'white')
+export const clearArray = (array:Array<string[]>):Array<string[]> => {
+  console.log(array.map((row:string[]):string[] => {
+    return [...row.map((col:string) => col = 'white')];
+  }));
+  return array.map((row:string[]):string[] => {
+    return [...row.map((col:string) => col = 'white')];
+  })
 }
 
 export const getArray = (level:number):Array<string[]> => {

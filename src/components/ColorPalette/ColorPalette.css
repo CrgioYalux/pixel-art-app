@@ -1,6 +1,6 @@
 .palette-frame {
-  min-height: 10vh;
-  max-width: 95vw;
+  min-height: 5vh;
+  max-width: 80vw;
   position: relative;
   display: flex;
   flex-flow: row wrap;
@@ -10,8 +10,8 @@
 }
 
 .color-opt {
-  width: 2rem;
-  height: 2rem;
+  width: 1.5rem;
+  height: 1.5rem;
   cursor: pointer;
   outline: 1px solid rgba(0, 0, 0, 0.4);
 }

@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { getArray } from '../../helpers/getArray';
+import React, { useEffect } from 'react';
 import './Board.css';
+import { clearArray } from '../../helpers/getArray';
 
 interface options {
   blankSpaceVisibility: boolean;
@@ -8,13 +8,13 @@ interface options {
 }
 
 interface Props {
-  level: number;
+  board: string[][];
+  setBoard: React.Dispatch<React.SetStateAction<string[][]>>;
   pincelColor: string;
   options: options;
 };
 
-const Board : React.FC<Props> = ({ level, pincelColor, options }) => {
-  const [board, setBoard] = useState<string[][]>(getArray(level));
+const Board : React.FC<Props> = ({ board, setBoard, pincelColor, options }) => {
 
   const handleActivation = (event:React.MouseEvent<HTMLDivElement>) => {
     const { position } : any = event.currentTarget.dataset;
@@ -27,8 +27,8 @@ const Board : React.FC<Props> = ({ level, pincelColor, options }) => {
       current[x][y] = pincelColor;
       return [...current];
     });
-
   };
+
 
 
   const styleForBlankSpaces = (color:string): string | null  => {
@@ -63,5 +63,3 @@ const Board : React.FC<Props> = ({ level, pincelColor, options }) => {
 
 export default Board;
 
-
-// className={['board-cell'].join(' ')}

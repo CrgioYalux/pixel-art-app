@@ -12,11 +12,12 @@ interface options {
 interface Props {
   options: options;
   setOptions: React.Dispatch<React.SetStateAction<options>>;
+  setBoard: React.Dispatch<React.SetStateAction<string[][]>>;
 }
 
-const Menu : React.FC<Props> = ({ options, setOptions }) => {
+const Menu : React.FC<Props> = ({ options, setOptions, setBoard }) => {
   const clearCanvas = () => {
-    console.log('clear');
+    setBoard((current:string[][]):string[][] => clearArray(current));
   }
 
   return (
