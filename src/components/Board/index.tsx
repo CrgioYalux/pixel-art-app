@@ -1,7 +1,5 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import './Board.css';
-import { clearArray } from '../../helpers/getArray';
-
 interface options {
   blankSpaceVisibility: boolean;
   bordersVisibility: boolean;
@@ -16,7 +14,7 @@ interface Props {
 
 const Board : React.FC<Props> = ({ board, setBoard, pincelColor, options }) => {
 
-  const handleActivation = (event:React.MouseEvent<HTMLDivElement>) => {
+  const paintCell = (event:React.MouseEvent<HTMLDivElement>) => {
     const { position } : any = event.currentTarget.dataset;
     const array : number[] = position.split(',');
     const coors : number[] = array.map(i => Number(i));
@@ -29,8 +27,6 @@ const Board : React.FC<Props> = ({ board, setBoard, pincelColor, options }) => {
     });
   };
 
-
-
   const styleForBlankSpaces = (color:string): string | null  => {
     if (color === 'white' && !options.blankSpaceVisibility) return 'not-visible';
     return null;
@@ -38,17 +34,18 @@ const Board : React.FC<Props> = ({ board, setBoard, pincelColor, options }) => {
 
   const styleForBordersAndColor = (color:string): object => {
     if (options.bordersVisibility) return { backgroundColor: `#${color}`, outline: '1px solid rgba(0,0,0,0.1)'};
-    else return { backgroundColor: `#${color}`, outline: `none` };
+    return { backgroundColor: `#${color}`, outline: `none` };
   }
 
   return (
+    <>
     <div className='board-frame' id='board-frame'>
       {board.map((row:string[], idxRow:number) => {
         return (
           <div className='board-row' key={idxRow}>
             {row.map((color:string, idxCol:number) => 
               <div 
-                onClick={handleActivation} 
+                onClick={paintCell} 
                 className={['board-cell', styleForBlankSpaces(color)].join(' ')} 
                 key={idxCol}
                 data-position={[idxRow, idxCol]} 
@@ -58,6 +55,7 @@ const Board : React.FC<Props> = ({ board, setBoard, pincelColor, options }) => {
         )}
       )}
     </div>
+    </>
   );
 };
 

@@ -16,8 +16,19 @@ interface Props {
 }
 
 const Menu : React.FC<Props> = ({ options, setOptions, setBoard }) => {
+
   const clearCanvas = () => {
     setBoard((current:string[][]):string[][] => clearArray(current));
+    const list:HTMLCollection | undefined = document.getElementById('board-frame')?.children;
+    if (list) {
+      for (let rows = 0; rows < list.length; rows++) {
+        for (let cols = 0; cols < list[rows].children.length; cols++) {
+          (options.bordersVisibility) 
+          ? list[rows].children[cols].setAttribute('style', 'backgroundColor: white; outline: 1px solid rgba(0,0,0,0.1)')
+          : list[rows].children[cols].setAttribute('style', 'backgroundColor: white; outline: none')
+        }
+      }
+    }
   }
 
   return (

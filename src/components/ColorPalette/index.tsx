@@ -28,7 +28,12 @@ const ColorPalette : React.FC<Props> = ({ changePincelColor }) => {
   const [selectedColor, setSelectedColor] = useState<string>('');
 
   const refreshPalette = () => {
-    getColors(7).then(setColors);
+    getColors(7).then(colors => {
+      if (colors) {
+        colors.push('ffffff');
+        setColors(colors)
+      }
+    });
   }
 
   useEffect(() => {

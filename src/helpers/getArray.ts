@@ -3,11 +3,11 @@ const range = (size:number):string[] => {
 }
 
 export const clearArray = (array:Array<string[]>):Array<string[]> => {
-  console.log(array.map((row:string[]):string[] => {
-    return [...row.map((col:string) => col = 'white')];
-  }));
+  // console.log(array.map((row:string[]):string[] => {
+  //   return [...row.map((col:string) => col = 'white')];
+  // })); 
   return array.map((row:string[]):string[] => {
-    return [...row.map((col:string) => col = 'white')];
+    return [...row.map((col:string) => col = 'transparent')];
   })
 }
 
